@@ -1,0 +1,20 @@
+<div>
+    <h2>SanGerMapp</h2>
+</div>
+<div id="map-container">
+    <div id="map-content">
+        <app-leaflet-map (positionChange)="onPositionChange($event)" [initialPosition]="myPosition">
+        </app-leaflet-map>
+    </div>
+</div>
+<form [formGroup]="profileForm" novalidate>
+    <input type="text" formControlName="longitude" >
+    <input type="text" formControlName="latitude" >
+</form>
+
+<button (click)="enable()">Enable Add</button>
+<button (click)="disable()">Disable Add</button>
+<button (click)="remove()">Remove</button>
+
+<button (click)="reset()">reset</button>
+<div>{{myPosition.latitude}}-{{myPosition.longitude}}</div>
